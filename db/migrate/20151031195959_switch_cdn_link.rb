@@ -27,14 +27,5 @@ class SwitchCdnLink < ActiveRecord::Migration
         w.save
       end
     end
-
-    Image.all.each do |w|
-      if w.path.present?
-        puts "Updating Image..."
-        w.path = w.path.gsub(/#{old}/, newLink)
-        w.save
-      end
-    end
-
   end
 end
