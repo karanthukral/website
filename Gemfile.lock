@@ -252,6 +252,7 @@ DEPENDENCIES
   coffee-rails (~> 4.0.0)
   devise
   devise-bootstrap-views
+  execjs
   fastimage
   galleria-rails!
   jbuilder (~> 2.0)
