@@ -3,14 +3,6 @@ class SwitchCdnLink < ActiveRecord::Migration
     old = "http://gitcdn.jnadeau.ca"
     newLink = "https://jules2689.github.io/gitcdn"
 
-    FrontPageWidget.all.each do |w|
-      if w.image_url.present?
-        puts "Updating Widget..."
-        w.image_url = w.image_url.gsub(/#{old}/, newLink)
-        w.save
-      end
-    end
-
     Interest.all.each do |w|
       if w.image_url.present?
         puts "Updating Interest..."
