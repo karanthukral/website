@@ -1,9 +1,7 @@
 class ImagesController < ApplicationController
-
   def create_github_image
     title = image_title(params[:image])
     name = image_file_name(params[:image])
-    path = file_path(name)
 
     @image = image_maker.create_image(title, file_path(name), params[:image])
   end
@@ -40,12 +38,12 @@ class ImagesController < ApplicationController
     [@path, name].reject(&:blank?).join("/")
   end
 
-  def image_title(image, title=params[:title])
+  def image_title(image, title = params[:title])
     image_name = image.original_filename.split(".")
-    @title ||= title.present? ? title.parameterize.gsub(/-/,"_") : image_name.first.downcase.gsub(/-/,"_")
+    @title ||= title.present? ? title.parameterize.tr('-', "_") : image_name.first.downcase.tr('-', "_")
   end
 
-  def image_file_name(image, title=params[:title])
+  def image_file_name(image, title = params[:title])
     image_name = image.original_filename.split(".")
     ext = image_name.last.downcase
     @image_file_name ||= "#{image_title(image, title)}_#{Time.now.to_i}.#{ext}"

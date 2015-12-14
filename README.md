@@ -18,6 +18,7 @@ Written in Rails, this encompasses my blog and interests.
     git_cdn_repo_url: https://jules2689.github.io/gitcdn/
     website_title: Julian Nadeau
     website_email: julian@jnadeau.ca
+    theme: theme_1
 
   development:
     <<: *default
@@ -35,6 +36,7 @@ Written in Rails, this encompasses my blog and interests.
     pg_db_name: KEY
     pg_user: KEY
     pg_pass: KEY
+    google_analytics: UA-xxx-x
 ```
 4. Create a user manually. This is a personal website, so there are no registrations.
 5. All setup with Capistrano. Use `cap production deploy` to deploy (setting proper IPs in `deploy.rb`)
