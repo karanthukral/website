@@ -26,8 +26,7 @@ class InterestsController < ApplicationController
 
   def create
     @interest = Interest.new(interest_params)
-    @interest.save
-    respond_with(@interest)
+    redirect_to :interests if @interest.save
   end
 
   def destroy
