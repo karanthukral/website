@@ -61,12 +61,11 @@ ActiveRecord::Schema.define(version: 20151215040548) do
     t.string   "handle"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.datetime "published_date",                     default: '2015-01-31 06:19:36'
+    t.datetime "published_date",         default: '2016-04-08 00:31:15'
     t.string   "header_image_uid"
     t.string   "header_image_name"
     t.string   "dominant_header_colour"
     t.string   "published_key"
-    t.string   "header_image_url",       limit: 500
   end
 
   create_table "taggings", force: true do |t|

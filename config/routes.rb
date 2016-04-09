@@ -22,4 +22,5 @@ Rails.application.routes.draw do
   end
 
   root "application#index"
+  match '/irs', to: "application#irs", via: "get"
 end

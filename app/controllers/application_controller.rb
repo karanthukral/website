@@ -1,6 +1,9 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
 
+  def irs
+  end
+
   private
     
   def authenticate_user_from_token!
